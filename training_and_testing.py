@@ -166,29 +166,6 @@ disp = metrics.plot_confusion_matrix(clf, X_test, y_test)
 disp.figure_.suptitle("Confusion Matrix")
 print(f"Confusion matrix:\n{disp.confusion_matrix}")
 
-# Testing time performance
-img = cv2.imread(path_live[12323])
-img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-height_im, width_im = img.shape
-imtemp = img*2
-
-# Runtime for extract vector corr of residual face
-start = timeit.default_timer()
-central_pixels_vec1,central_pixels_vec2,imdiff1,imdiff2 = residual_and_cut(img,imtemp)
-height_imdiff,width_imdiff = imdiff1.shape
-corrs1,corrs2 = feature_extraction(central_pixels_vec1,central_pixels_vec2,\
-    imdiff1,imdiff2,height_imdiff,width_imdiff)
-corrs_all = np.concatenate((corrs1,corrs2),axis=-1)
-stop = timeit.default_timer()
-print('Time: ', stop - start)
-
-# Runtime for classification spoof or live face
-start = timeit.default_timer()
-corrs_all = sc.transform(corrs_all)
-predicted = clf.predict(corrs_all)
-stop = timeit.default_timer()
-print('Time: ', stop - start)
-
 # Save model
 from joblib import dump, load
 dump(clf, 'SVM_spoof.joblib')
