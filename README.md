@@ -44,5 +44,6 @@ Trong file training_and_testing.py thực hiện những công việc sau
   - Tensorflow 2.0
   - Open CV 4.2.0
   - Sklearn 0.22.1
+  - MTCNN
  2. Khi evaluate luôn phải nhớ giải nén 2 thư mục hình ảnh và model
  3. Chiến lược traning vẫn đang cải thiện để đạt được độ chính xác cao hơn.
