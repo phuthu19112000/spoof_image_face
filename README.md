@@ -1,7 +1,7 @@
 # spoof_image_face
 link dataset: [CelebA-spoof](https://pan.baidu.com/s/12qe13-jFJ9pE-_E3iSZtkw#list/path=%2F)
 
-link dataset preprocessed: [Pre-Dataset](https://drive.google.com/drive/u/0/folders/1DwizEWWN28eV2mmyM11Ito5YISQgTNDA)
+link dataset cameraip preprocessed: [Pre-Dataset](https://drive.google.com/drive/u/0/folders/17nBKBWs-A5mcee04rkBjFexA_wEjtLjU)
 
 link paper : [Spoof image via LCD](http://www.gipsa-lab.fr/~kai.wang/papers/report_recap4n6.pdf)
 ## Introduction
@@ -10,9 +10,9 @@ Thực hiện phương pháp phân tích thống kê trên miền vi phân hình
 
 ## Quick Start
 
-1. Download repo về directory, giải nén và cd tới "spoof_image_face"
-2. Download "crop_phone_spoof.zip" và "crop_image_live.zip" tại "Pre-Dataset" giải nén và lưu vào spoof_image_face.
-3. Chạy trình phân loại SVM để đưa ra dự đoán từ một hình ảnh đầu vào
+1. Download repo về directory, giải nén và cd tới "spoof_image_face".
+2. Download dataset.zip tại "Pre-Dataset" giải nén và lưu vào spoof_image_face.
+3. Chạy trình phân loại SVM để đưa ra dự đoán từ một hình ảnh đầu vào.
 
 ``
 python .\evaluate.py -i path_to_image
@@ -25,7 +25,7 @@ Lệnh trên sẽ tải model SVM đã được training cùng với trình trí
 Thực hiện lệnh sau
 
 ```
-python training_and_testing.py
+python training.py
 ```
 Trong file training_and_testing.py thực hiện những công việc sau
 
