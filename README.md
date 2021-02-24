@@ -21,7 +21,6 @@ python .\evaluate.py -i path_to_image
 Lệnh trên sẽ tải model SVM đã được training cùng với trình trích xuất đặc trưng thống kê sử dụng hệ số tương quan trên một hình ảnh đầu vào với đối số "path_to_image". Nếu là hình ảnh spoof thì output = 1, ngược lại là hình ảnh live thì output = 0.
 
 ## Training
-
 Thực hiện lệnh sau
 
 ```
