@@ -39,7 +39,7 @@ Trong file training_and_testing.py thực hiện những công việc sau
 ## Some issues to know
 
 1. Môi trường thử nghiêm code là:
-  - Python 3.7.6
+  - Python 3.8.5
   - Tensorflow 2.0
   - Open CV 4.2.0
   - Sklearn 0.22.1
