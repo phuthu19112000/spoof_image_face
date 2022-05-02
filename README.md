@@ -15,18 +15,18 @@ Thực hiện phương pháp phân tích thống kê trên miền vi phân hình
 3. Chạy trình phân loại SVM để đưa ra dự đoán từ một hình ảnh đầu vào.
 
 ``
-python .\evaluate.py -i path_to_image
+python ./tools/inference.py -i path_to_image -s path_to_scaler -m path_to_model
 ``
 
-Lệnh trên sẽ tải model SVM đã được training cùng với trình trích xuất đặc trưng thống kê sử dụng hệ số tương quan trên một hình ảnh đầu vào với đối số "path_to_image". Nếu là hình ảnh spoof thì output = 1, ngược lại là hình ảnh live thì output = 0.
+Lệnh trên sẽ tải model SVM đã được training, trình trích xuất đặc trưng thống kê sử dụng hệ số tương quan trên một hình ảnh đầu vào với đối số "path_to_image". Nếu là hình ảnh spoof thì output = 1, ngược lại là hình ảnh live thì output = 0.
 
 ## Training
 Thực hiện lệnh sau
 
 ```
-python training.py
+python training.py -r path_to_dataset_real -f path_to_dataset_fake
 ```
-Trong file training_and_testing.py thực hiện những công việc sau
+Trong file training.py thực hiện những công việc sau
 
 1. Load 2 tập dữ liệu từ dir
 2. Thực hiện trích xuất các đặc trưng thống kê sử dụng hệ số tương quan, mỗi hình ảnh sẽ đại diên cho vector 28 chiều
@@ -44,4 +44,4 @@ Trong file training_and_testing.py thực hiện những công việc sau
   - Open CV 4.2.0
   - Sklearn 0.22.1
   - MTCNN
-2. Chiến lược traning vẫn đang cải thiện để đạt được độ chính xác cao hơn.
+2. Chiến lược training vẫn đang cải thiện để đạt được độ chính xác cao hơn.
